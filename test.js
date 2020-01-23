@@ -1,25 +1,25 @@
 const { BaseInterface } = require("./api");
 
-current = "";
-Host = ""
+current = "770354028";
+Host = "";
 Test = new BaseInterface(Host);
 Test.SetCurrentQQ(current);
 
 const TestSendMsgFriend = async Params => {
-    switch (Params.type) {
-        case "TextMsg":
-            Result = await Test.SendFriendMsgText(Params.data)
-            console.log(Result)
-            break;
-        case "PicMsg":
-            Result = await Test.SendFriendMsgImage(Params.data)
-            console.log(Result)
-            break;
-        case "VoiceMsg":
-            Result = await Test.SendFriendMsgVoice(Params.data)
-            console.log(Result)
-            break;
-    }
+  switch (Params.type) {
+    case "TextMsg":
+      Result = await Test.SendFriendMsgText(Params.data);
+      console.log(Result);
+      break;
+    case "PicMsg":
+      Result = await Test.SendFriendMsgImage(Params.data);
+      console.log(Result);
+      break;
+    case "VoiceMsg":
+      Result = await Test.SendFriendMsgVoice(Params.data);
+      console.log(Result);
+      break;
+  }
 };
 /* TestSendMsgFriend({
     type: "TextMsg",
@@ -29,7 +29,6 @@ const TestSendMsgFriend = async Params => {
         atUser: 0
     }
 }) */
-
 
 /* TestSendMsgFriend({
     type: "PicMsg",
@@ -43,7 +42,6 @@ const TestSendMsgFriend = async Params => {
     }
 }) */
 
-
 /* TestSendMsgFriend({
     type: "VoiceMsg",
     data: {
@@ -55,25 +53,23 @@ const TestSendMsgFriend = async Params => {
     }
 }) */
 
-
 const TestSendMsgGroup = async Params => {
-    let Result;
-    switch (Params.type) {
-        case "TextMsg":
-            Result = await Test.SendGroupMsgText(Params.data)
-            console.log(Result)
-            break;
-        case "PicMsg":
-            Result = await Test.SendGroupMsgImage(Params.data)
-            console.log(Result)
-            break;
-        case "VoiceMsg":
-            Result = await Test.SendGroupMsgVoice(Params.data)
-            console.log(Result)
-            break;
-    }
+  let Result;
+  switch (Params.type) {
+    case "TextMsg":
+      Result = await Test.SendGroupMsgText(Params.data);
+      console.log(Result);
+      break;
+    case "PicMsg":
+      Result = await Test.SendGroupMsgImage(Params.data);
+      console.log(Result);
+      break;
+    case "VoiceMsg":
+      Result = await Test.SendGroupMsgVoice(Params.data);
+      console.log(Result);
+      break;
+  }
 };
-
 
 /* TestSendMsgGroup({
     type: "TextMsg",
@@ -107,31 +103,28 @@ const TestSendMsgGroup = async Params => {
     }
 }) */
 
-
-const TestGetFriendList = async(Params) => {
-    let res = await Test.GetFriendList(Params);
-    console.log(res);
+const TestGetFriendList = async Params => {
+  let res = await Test.GetFriendList(Params);
+  console.log(res);
 };
 /* TestGetFriendList({ StartIndex: 200 }); */
 
-
-
-const TestGetGroupList = async(Params) => {
-    let res = await Test.GetGroupList(Params);
-    console.log(res);
+const TestGetGroupList = async Params => {
+  let res = await Test.GetGroupList(Params);
+  console.log(res);
 };
 /* TestGetGroupList({NextToken:""});
  */
 
-const TestGetClusterInfo = async() => {
-    let res = await Test.GetClusterInfo();
-    console.log(res);
+const TestGetClusterInfo = async () => {
+  let res = await Test.GetClusterInfo();
+  console.log(res);
 };
 /* TestGetClusterInfo(); */
 
-const TestGetGroupUserList = async(Params) => {
-    let res = await Test.GetGroupUserList(Params);
-    console.log(res);
+const TestGetGroupUserList = async Params => {
+  let res = await Test.GetGroupUserList(Params);
+  console.log(res);
 };
 
 /* TestGetGroupUserList({
@@ -139,83 +132,135 @@ const TestGetGroupUserList = async(Params) => {
     LastUin: 0
 }) */
 
-const TestQQZan = async(UserID) => {
-        let res = await Test.QQZan(UserID);
-        console.log(res);
-    }
-    /* TestQQZan({UserID:2934068293}) */
-const TestGetBalance = async() => {
-        let res = await Test.GetBalance();
-        console.log(res);
-    }
-    /* TestGetBalance() */
+const TestQQZan = async UserID => {
+  let res = await Test.QQZan(UserID);
+  console.log(res);
+};
+/* TestQQZan({UserID:2934068293}) */
+const TestGetBalance = async () => {
+  let res = await Test.GetBalance();
+  console.log(res);
+};
+/* TestGetBalance() */
 
-const TestAddQQUser = async(Params) => {
-    let res = await Test.AddQQUser(Params);
-    console.log(res);
-}
+const TestAddQQUser = async Params => {
+  let res = await Test.AddQQUser(Params);
+  console.log(res);
+};
 
 /* TestAddQQUser({ "AddUserUid": 1283150390, "FromGroupID": 0, "AddFromSource": 2005, "Content": "加好友，互助浇水" }) */
 
-const TestQzonePublish = async(Params) => {
-        let res = await Test.QzonePublish(Params);
-        console.log(res);
-    }
-    /* TestQzonePublish({ "DeviceType": "iPod5,1", "Content": "测试空间图文", "PicUrl": ["http://imgcache.qq.com/ac/qqweather/image/2020/6/27.png?ptype=lunar"] }) */
+const TestQzonePublish = async Params => {
+  let res = await Test.QzonePublish(Params);
+  console.log(res);
+};
+/* TestQzonePublish({ "DeviceType": "iPod5,1", "Content": "测试空间图文", "PicUrl": ["http://imgcache.qq.com/ac/qqweather/image/2020/6/27.png?ptype=lunar"] }) */
 
-const TestRevokeMsg = async(Params) => {
-        let res = await Test.RevokeMsg(Params);
-        console.log(res);
-    }
-    /* TestRevokeMsg({ "GroupID": 1021213099, "MsgSeq": 76, "MsgRandom": 1053578504 }) */
-const TestRefreshKeys = async() => {
-        let res = await Test.RefreshKeys();
-        console.log(res);
-    }
-    /* TestRefreshKeys() */
-const TestShutUp = async(Params) => {
-        let res = await Test.ShutUp(Params)
-        console.log(res);
-    }
-    /* TestShutUp({ "ShutUpType": 1, "GroupID": 1021213099, "ShutUid": 15, "ShutTime": 60 }) */
+const TestRevokeMsg = async Params => {
+  let res = await Test.RevokeMsg(Params);
+  console.log(res);
+};
+/* TestRevokeMsg({ "GroupID": 1021213099, "MsgSeq": 76, "MsgRandom": 1053578504 }) */
+const TestRefreshKeys = async () => {
+  let res = await Test.RefreshKeys();
+  console.log(res);
+};
+/* TestRefreshKeys() */
+const TestShutUp = async Params => {
+  let res = await Test.ShutUp(Params);
+  console.log(res);
+};
+/* TestShutUp({ "ShutUpType": 1, "GroupID": 1021213099, "ShutUid": 15, "ShutTime": 60 }) */
 
-const TestAnnounce = async(Params) => {
-        let res = await Test.Announce(Params)
-        console.log(res);
-    }
-    /* TestAnnounce({ "GroupID": 1021213099, "Title": "1", "Text": "1", "Pinned": 0, "Type": 20 }) */
+const TestAnnounce = async Params => {
+  let res = await Test.Announce(Params);
+  console.log(res);
+};
+/* TestAnnounce({ "GroupID": 1021213099, "Title": "1", "Text": "1", "Pinned": 0, "Type": 20 }) */
 
-const TestLogOut = async() => {
-        let res = await Test.LogOut()
-        console.log(res);
-    }
-    /* TestLogOut() */
+const TestLogOut = async () => {
+  let res = await Test.LogOut();
+  console.log(res);
+};
+/* TestLogOut() */
 
-const TestGetUserCook = async() => {
-        let res = await Test.GetUserCook()
-        console.log(res);
-    }
-    /* TestGetUserCook() */
-const TestDealFriend = async(Params) => {
-        let res = await Test.DealFriend()
-        console.log(res);
-    }
-    /* TestDealFriend() */
+const TestGetUserCook = async () => {
+  let res = await Test.GetUserCook();
+  console.log(res);
+};
+/* TestGetUserCook() */
+const TestDealFriend = async Params => {
+  let res = await Test.DealFriend();
+  console.log(res);
+};
+/* TestDealFriend() */
 
-const TestModifyGroupCard = async(Params) => {
-        let res = await Test.ModifyGroupCard()
-        console.log(res);
-    }
-    /* TestModifyGroupCard() */
-const TestAnswerInviteGroup = async(Params) => {
-        let res = await Test.AnswerInviteGroup()
-        console.log(res);
-    }
-    /* TestAnswerInviteGroup() */
+const TestModifyGroupCard = async Params => {
+  let res = await Test.ModifyGroupCard();
+  console.log(res);
+};
+/* TestModifyGroupCard() */
+const TestAnswerInviteGroup = async Params => {
+  let res = await Test.AnswerInviteGroup();
+  console.log(res);
+};
+/* TestAnswerInviteGroup() */
 
-const TestSetUniqueTitle = async(Params) => {
-    let res = await Test.SetUniqueTitle()
-    console.log(res);
-}
+const TestSetUniqueTitle = async Params => {
+  let res = await Test.SetUniqueTitle();
+  console.log(res);
+};
 
 /* TestSetUniqueTitle() */
+
+const TestFindUser = async (Skey, Params) => {
+  let res = await Test.FindUser(Skey, Params);
+  console.log(res);
+};
+/* 
+TestFindUser("", {
+  num: "20",
+  page: "0",
+  sessionid: "0",
+  keyword: "2238687022",
+  agerg: "0",
+  sex: "0",
+  firston: "1",
+  video: "0",
+  country: "0",
+  province: "0",
+  city: "0",
+  district: "0",
+  hcountry: "0",
+  hprovince: "0",
+  hcity: "0",
+  hdistrict: "0",
+  online: "1"
+});
+ */
+
+const TestFindGroup = async (Skey, Params) => {
+  let res = await Test.FindGroup(Skey, Params);
+  console.log(JSON.parse(res));
+};
+
+/* TestFindGroup("", {
+  k: "交友",
+  n: "8",
+  st: "1",
+  iso: "1",
+  src: "1",
+  v: "5683",
+  bkn: "",
+  isRecommend: "false",
+  city_id: "0",
+  from: "1",
+  newSearch: "true",
+  penetrate: "",
+  keyword: "我的世界12213",
+  sort: "0",
+  wantnum: "24",
+  page: "0",
+  ldw: ""
+});
+ */
