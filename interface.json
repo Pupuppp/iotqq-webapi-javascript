@@ -1,4 +1,8 @@
 {
+    "InstallService": {
+        "Url": "http://$Host/v1/Github/InstallService",
+        "Method": "GET"
+    },
     "SendMsg": {
         "Url": "http://$Host/v1/LuaApiCaller?qq=$QQ&funcname=SendMsg&timeout=10",
         "Method": "POST",

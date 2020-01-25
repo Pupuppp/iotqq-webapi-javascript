@@ -1,9 +1,16 @@
 const { BaseInterface } = require("./api");
 
-current = "770354028";
+current = "";
 Host = "";
 Test = new BaseInterface(Host);
 Test.SetCurrentQQ(current);
+
+const TestInstallService = async () => {
+  let res = await Test.InstallService();
+  console.log(res);
+};
+
+TestInstallService();
 
 const TestSendMsgFriend = async Params => {
   switch (Params.type) {
